@@ -39,21 +39,28 @@
   gLumia930PkgTokenSpaceGuid.PcdUefiMemPoolSize|0x03300000
 
   # Default resolution for this firmware can be seen in dec file, override here for specific platform configuration if needed
-  #gLumia930PkgTokenSpaceGuid.PcdMipiFrameBufferWidth|1080
-  #gLumia930PkgTokenSpaceGuid.PcdMipiFrameBufferHeight|1920
-  #gLumia930PkgTokenSpaceGuid.PcdMipiFrameBufferVisibleWidth|1080
-  #gLumia930PkgTokenSpaceGuid.PcdMipiFrameBufferVisibleHeight|1920
+  #gLumia930PkgTokenSpaceGuid.PcdMipiFrameBufferWidth|480
+  #gLumia930PkgTokenSpaceGuid.PcdMipiFrameBufferHeight|854
+  #gLumia930PkgTokenSpaceGuid.PcdMipiFrameBufferVisibleWidth|480
+  #gLumia930PkgTokenSpaceGuid.PcdMipiFrameBufferVisibleHeight|854
 
 [PcdsDynamicDefault.common]
   #
   # Set video resolution for boot options and for text setup.
   # PlatformDxe can set the former at runtime.
   #
-  gEfiMdeModulePkgTokenSpaceGuid.PcdVideoHorizontalResolution|1080
-  gEfiMdeModulePkgTokenSpaceGuid.PcdVideoVerticalResolution|1920
-  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupVideoHorizontalResolution|1080
-  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupVideoVerticalResolution|1920
-  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupConOutRow|160
-  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupConOutColumn|120
+  gEfiMdeModulePkgTokenSpaceGuid.PcdVideoHorizontalResolution|480
+  gEfiMdeModulePkgTokenSpaceGuid.PcdVideoVerticalResolution|854
+  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupVideoHorizontalResolution|480
+  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupVideoVerticalResolution|854
+  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupConOutRow|24
+  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupConOutColumn|122
+
+  [PcdsPatchableInModule]
+   # Console Resolution
+  gEfiMdeModulePkgTokenSpaceGuid.PcdVideoHorizontalResolution|480
+  gEfiMdeModulePkgTokenSpaceGuid.PcdVideoVerticalResolution|854
+  gEfiMdeModulePkgTokenSpaceGuid.PcdConOutColumn|122
+  gEfiMdeModulePkgTokenSpaceGuid.PcdConOutRow|24
 
 !include Lumia930Pkg/Shared.dsc.inc
