@@ -32,7 +32,7 @@
 
 
 [PcdsFixedAtBuild.common]
-  gArmTokenSpaceGuid.PcdSystemMemorySize|0x20000000         # 2GB
+  gArmTokenSpaceGuid.PcdSystemMemorySize|0x20000000         # 0.5GB
   gArmTokenSpaceGuid.PcdSystemMemoryBase|0x00000000
   gArmPlatformTokenSpaceGuid.PcdCoreCount|4
   gLumia930PkgTokenSpaceGuid.PcdPreAllocatedMemorySize|0x1CD00000 #0FF00000
