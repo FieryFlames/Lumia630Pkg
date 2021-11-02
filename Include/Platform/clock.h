@@ -26,8 +26,8 @@
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef __COPPER_CLOCK_H
-#define __COPPER_CLOCK_H
+#ifndef __MSM8226_CLOCK_H
+#define __MSM8226_CLOCK_H
 
 #include <Chipset/clock.h>
 #include <Chipset/clock_lib2.h>
@@ -45,6 +45,7 @@
 #define VSYNC_CMD_RCGR                  REG_MM(0x2080)
 #define VSYNC_CFG_RCGR                  REG_MM(0x2084)
 #define MDSS_VSYNC_CBCR                 REG_MM(0x2328)
+
 #define MDP_CMD_RCGR                    REG_MM(0x2040)
 #define MDP_CFG_RCGR                    REG_MM(0x2044)
 #define MDP_CBCR                        REG_MM(0x231C)
@@ -71,35 +72,6 @@
 #define DSI_PIXEL0_N                    REG_MM(0x200C)
 #define DSI_PIXEL0_D                    REG_MM(0x2010)
 
-#define DSI0_PHY_PLL_OUT                BIT(8)
-#define PIXEL_SRC_DIV_1_5               BIT(1)
-
-#define DSI_BYTE1_CMD_RCGR              REG_MM(0x2140)
-#define DSI_BYTE1_CFG_RCGR              REG_MM(0x2144)
-#define DSI_BYTE1_CBCR                  REG_MM(0x2340)
-#define DSI_ESC1_CMD_RCGR               REG_MM(0x2180)
-#define DSI_ESC1_CFG_RCGR               REG_MM(0x2184)
-#define DSI_ESC1_CBCR                   REG_MM(0x2348)
-#define DSI_PIXEL1_CMD_RCGR             REG_MM(0x2020)
-#define DSI_PIXEL1_CFG_RCGR             REG_MM(0x2024)
-#define DSI_PIXEL1_CBCR                 REG_MM(0x2318)
-#define DSI_PIXEL1_M                    REG_MM(0x2028)
-#define DSI_PIXEL1_N                    REG_MM(0x202C)
-#define DSI_PIXEL1_D                    REG_MM(0x2030)
-
-#define MDSS_EDPPIXEL_CBCR              REG_MM(0x232C)
-#define MDSS_EDPLINK_CBCR               REG_MM(0x2330)
-#define MDSS_EDPAUX_CBCR               	REG_MM(0x2334)
-#define EDPPIXEL_M                      REG_MM(0x20A8)
-#define EDPPIXEL_N                      REG_MM(0x20AC)
-#define EDPPIXEL_D                      REG_MM(0x20B0)
-#define EDPPIXEL_CFG_RCGR               REG_MM(0x20A4)
-#define EDPPIXEL_CMD_RCGR               REG_MM(0x20A0)
-#define EDPLINK_CFG_RCGR                REG_MM(0x20C4)
-#define EDPLINK_CMD_RCGR                REG_MM(0x20C0)
-#define EDPAUX_CFG_RCGR                	REG_MM(0x20E4)
-#define EDPAUX_CMD_RCGR                	REG_MM(0x20E0)
-
 void platform_clock_init(void);
 
 void clock_init_mmc(uint32_t interface);
@@ -107,12 +79,14 @@ void clock_config_mmc(uint32_t interface, uint32_t freq);
 void clock_config_uart_dm(uint8_t id);
 void hsusb_clock_init(void);
 void clock_config_ce(uint8_t instance);
-void mdp_clock_init(void);
-void mdp_gdsc_ctrl(uint8_t enable);
-void edp_clk_enable(void);
 void clock_ce_enable(uint8_t instance);
 void clock_ce_disable(uint8_t instance);
-void clock_usb30_init(void);
-
+void mdp_clock_init(void);
+void mdp_gdsc_ctrl(uint8_t enable);
+void mdp_clock_disable(void);
+void mdp_clock_enable(void);
+void mmss_bus_clocks_enable(void);
+void mmss_bus_clocks_disable(void);
+void mmss_dsi_clocks_enable(uint8_t pclk0_m, uint8_t pclk0_n, uint8_t pclk0_d);
+void mmss_dsi_clocks_disable(void);
 #endif
- 
