@@ -143,6 +143,14 @@
   #gEfiIntelFrameworkModulePkgTokenSpaceGuid.PcdShellFile|{ 0x83, 0xA5, 0x04, 0x7C, 0x3E, 0x9E, 0x1C, 0x4F, 0xAD, 0x65, 0xE0, 0x52, 0x68, 0xD0, 0xB4, 0xD1 }
   gEfiMdePkgTokenSpaceGuid.PcdPlatformBootTimeOut|0
 
+  # RPM
+  gQcomTokenSpaceGuid.PcdApcsAlias0IpcInterrupt|0xF900D008
+  gQcomTokenSpaceGuid.PcdSmdIrq|200
+
+  # SMEM
+  gQcomTokenSpaceGuid.PcdMsmSharedBase|0x06A00000
+  gQcomTokenSpaceGuid.PcdMsmSharedSize|0x00200000
+
 [LibraryClasses]
    VariablePolicyHelperLib|MdeModulePkg/Library/VariablePolicyHelperLib/VariablePolicyHelperLib.inf
 
@@ -242,6 +250,7 @@
   LcmLib|Lumia630Pkg/Library/LcmLib/LcmLib.inf
   MicroLibC|Lumia630Pkg/Library/MicroLibC/MicroLibC.inf
   StrLib|Lumia630Pkg/Library/StrLib/StrLib.inf
+  SmemLib|Lumia630Pkg/Driver/SmemDxe/SmemImplLib.inf
   
   # System Reset
   EfiResetSystemLib|ArmPkg/Library/ArmPsciResetSystemLib/ArmPsciResetSystemLib.inf
@@ -252,6 +261,8 @@
   PrePiMemoryAllocationLib|EmbeddedPkg/Library/PrePiMemoryAllocationLib/PrePiMemoryAllocationLib.inf
   PrePiHobListPointerLib|ArmPlatformPkg/Library/PrePiHobListPointerLib/PrePiHobListPointerLib.inf
   PcdLib|MdePkg/Library/BasePcdLibNull/BasePcdLibNull.inf
+  RpmLib|Lumia630Pkg/Driver/SmdRpmDxe/RpmLib.inf
+  SmemLib|Lumia630Pkg/Driver/SmemDxe/SmemImplLib.inf
   
   # SoC Drivers
   GpioTlmmLib|Lumia630Pkg/GPLDriver/GpioTlmmDxe/GpioTlmmImplLib.inf
@@ -283,6 +294,8 @@
   SpmiLib|Lumia630Pkg/Driver/SpmiDxe/SpmiLib.inf
   Pm8x41Lib|Lumia630Pkg/Driver/Pm8x41Dxe/Pm8x41Lib.inf
   ClockLib|Lumia630Pkg/Driver/ClockDxe/ClockImplLib.inf
+  RpmLib|Lumia630Pkg/Driver/SmdRpmDxe/RpmLib.inf
+  SmemLib|Lumia630Pkg/Driver/SmemDxe/SmemImplLib.inf
 
 
 [LibraryClasses.common.UEFI_APPLICATION]
@@ -294,12 +307,14 @@
   FileHandleLib|MdePkg/Library/UefiFileHandleLib/UefiFileHandleLib.inf
   ReportStatusCodeLib|MdeModulePkg/Library/DxeReportStatusCodeLib/DxeReportStatusCodeLib.inf
   ExtractGuidedSectionLib|MdePkg/Library/DxeExtractGuidedSectionLib/DxeExtractGuidedSectionLib.inf
+  RpmLib|Lumia630Pkg/Driver/SmdRpmDxe/RpmLib.inf
 
   # SoC Drivers
   GpioTlmmLib|Lumia630Pkg/GPLDriver/GpioTlmmDxe/GpioTlmmLib.inf
   SpmiLib|Lumia630Pkg/Driver/SpmiDxe/SpmiLib.inf
   Pm8x41Lib|Lumia630Pkg/Driver/Pm8x41Dxe/Pm8x41Lib.inf
   ClockLib|Lumia630Pkg/Driver/ClockDxe/ClockImplLib.inf
+  SmemLib|Lumia630Pkg/Driver/SmemDxe/SmemImplLib.inf
 
 [LibraryClasses.common.UEFI_DRIVER]
   ReportStatusCodeLib|MdeModulePkg/Library/DxeReportStatusCodeLib/DxeReportStatusCodeLib.inf
@@ -309,12 +324,14 @@
   MemoryAllocationLib|MdePkg/Library/UefiMemoryAllocationLib/UefiMemoryAllocationLib.inf
   UefiScsiLib|MdePkg/Library/UefiScsiLib/UefiScsiLib.inf
   ExtractGuidedSectionLib|MdePkg/Library/DxeExtractGuidedSectionLib/DxeExtractGuidedSectionLib.inf
+  RpmLib|Lumia630Pkg/Driver/SmdRpmDxe/RpmLib.inf
 
   # SoC Drivers
   GpioTlmmLib|Lumia630Pkg/GPLDriver/GpioTlmmDxe/GpioTlmmLib.inf
   SpmiLib|Lumia630Pkg/Driver/SpmiDxe/SpmiLib.inf
   Pm8x41Lib|Lumia630Pkg/Driver/Pm8x41Dxe/Pm8x41Lib.inf
   ClockLib|Lumia630Pkg/Driver/ClockDxe/ClockImplLib.inf
+  SmemLib|Lumia630Pkg/Driver/SmemDxe/SmemImplLib.inf
 
 [LibraryClasses.common.DXE_RUNTIME_DRIVER]
   HobLib|MdePkg/Library/DxeHobLib/DxeHobLib.inf
@@ -366,6 +383,8 @@
   Lumia630Pkg/Driver/KeypadDxe/KeypadDxe.inf
   Lumia630Pkg/Driver/ClockDxe/ClockDxe.inf
   Lumia630Pkg/Driver/SdhciMMCHSDxe/SdhciMMCHS.inf
+  Lumia630Pkg/Driver/SmemDxe/SmemDxe.inf
+  Lumia630Pkg/Driver/SmdRpmDxe/RpmDxe.inf
 
 
 
