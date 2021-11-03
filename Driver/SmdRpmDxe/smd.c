@@ -174,6 +174,15 @@ void smd_uninit(smd_channel_info_t *ch)
 	ASSERT_EFI_ERROR(Status);
 }
 
+int smd_hack_opening(smd_channel_info_t *ch, uint32_t ch_type)
+{
+	smd_set_state(ch, SMD_SS_OPENING, 1);
+	smd_notify_rpm();
+	ch->port_info->ch1.stream_state = SMD_SS_OPENING;
+
+	return 0;
+}
+
 bool is_channel_open(smd_channel_info_t *ch)
 {
 	if(ch->port_info->ch0.stream_state == SMD_SS_OPENED &&

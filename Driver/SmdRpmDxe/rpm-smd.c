@@ -48,6 +48,11 @@ void rpm_smd_uninit(void)
 	smd_uninit(&ch);
 }
 
+void rpm_smd_hack_opening(void)
+{
+	smd_hack_opening(&ch, SMD_APPS_RPM);
+}
+
 int rpm_smd_send_data(uint32_t *data, uint32_t len, msg_type type)
 {
 	rpm_req req;

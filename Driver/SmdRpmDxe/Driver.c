@@ -23,6 +23,7 @@ RpmDxeInitialize (
   EFI_STATUS Status;
 
   rpm_smd_init();
+  rpm_smd_hack_opening();
 
   Status = gBS->InstallMultipleProtocolInterfaces(
                   &Handle,
@@ -32,6 +33,4 @@ RpmDxeInitialize (
   ASSERT_EFI_ERROR(Status);
 
   return Status;
-
-  rpm_smd_uninit();
 }
