@@ -144,12 +144,12 @@
   gEfiMdePkgTokenSpaceGuid.PcdPlatformBootTimeOut|0
 
   # RPM
-  gQcomTokenSpaceGuid.PcdApcsAlias0IpcInterrupt|0xF900D008
+  gQcomTokenSpaceGuid.PcdApcsAlias0IpcInterrupt|0xF9011000 #Value from LK
   gQcomTokenSpaceGuid.PcdSmdIrq|200
 
-  # SMEM
-  gQcomTokenSpaceGuid.PcdMsmSharedBase|0x06A00000
-  gQcomTokenSpaceGuid.PcdMsmSharedSize|0x00200000
+   # SMEM
+  gQcomTokenSpaceGuid.PcdMsmSharedBase|0x0FA00000 #Value from LK
+  gQcomTokenSpaceGuid.PcdMsmSharedSize|0x00100000 #Value from LK
 
 [LibraryClasses]
    VariablePolicyHelperLib|MdeModulePkg/Library/VariablePolicyHelperLib/VariablePolicyHelperLib.inf
