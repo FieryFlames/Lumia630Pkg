@@ -13,7 +13,7 @@
 
 [Defines]
   INF_VERSION                    = 0x00010005
-  BASE_NAME                      = Lumia930Lib
+  BASE_NAME                      = Lumia630Lib
   FILE_GUID                      = cb494bad-23ff-427e-8608-d7e138d3363b
   MODULE_TYPE                    = BASE
   VERSION_STRING                 = 1.0
@@ -24,15 +24,15 @@
   MdeModulePkg/MdeModulePkg.dec
   ArmPkg/ArmPkg.dec
   ArmPlatformPkg/ArmPlatformPkg.dec
-  Lumia930Pkg/Lumia930Pkg.dec
+  Lumia630Pkg/Lumia630Pkg.dec
 
 [LibraryClasses]
   ArmLib
   DebugLib
 
 [Sources.common]
-  Lumia930Lib.c
-  Lumia930LibMem.c
+  Lumia630Lib.c
+  Lumia630LibMem.c
 
 [Sources.Arm]
   Arm/ArmPlatformHelper.S    | GCC

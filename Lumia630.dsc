@@ -20,29 +20,29 @@
 #
 ################################################################################
 [Defines]
-  PLATFORM_NAME                  = Lumia930
+  PLATFORM_NAME                  = Lumia630
   PLATFORM_GUID                  = 566ba710-0bee-48e0-b56e-dcf4b0a38e04
   PLATFORM_VERSION               = 0.1
   DSC_SPECIFICATION              = 0x00010005
-  OUTPUT_DIRECTORY               = Build/Lumia930-$(ARCH)
+  OUTPUT_DIRECTORY               = Build/Lumia630-$(ARCH)
   SUPPORTED_ARCHITECTURES        = ARM
   BUILD_TARGETS                  = DEBUG|RELEASE
   SKUID_IDENTIFIER               = DEFAULT
-  FLASH_DEFINITION               = Lumia930Pkg/Lumia930.fdf
+  FLASH_DEFINITION               = Lumia630Pkg/Lumia630.fdf
 
 
 [PcdsFixedAtBuild.common]
   gArmTokenSpaceGuid.PcdSystemMemorySize|0x20000000         # 0.5GB
   gArmTokenSpaceGuid.PcdSystemMemoryBase|0x00000000
   gArmPlatformTokenSpaceGuid.PcdCoreCount|4
-  gLumia930PkgTokenSpaceGuid.PcdPreAllocatedMemorySize|0x1CD00000 #0FF00000
-  gLumia930PkgTokenSpaceGuid.PcdUefiMemPoolSize|0x03300000
+  gLumia630PkgTokenSpaceGuid.PcdPreAllocatedMemorySize|0x1CD00000 #0FF00000
+  gLumia630PkgTokenSpaceGuid.PcdUefiMemPoolSize|0x03300000
 
   # Default resolution for this firmware can be seen in dec file, override here for specific platform configuration if needed
-  #gLumia930PkgTokenSpaceGuid.PcdMipiFrameBufferWidth|480
-  #gLumia930PkgTokenSpaceGuid.PcdMipiFrameBufferHeight|854
-  #gLumia930PkgTokenSpaceGuid.PcdMipiFrameBufferVisibleWidth|480
-  #gLumia930PkgTokenSpaceGuid.PcdMipiFrameBufferVisibleHeight|854
+  #gLumia630PkgTokenSpaceGuid.PcdMipiFrameBufferWidth|480
+  #gLumia630PkgTokenSpaceGuid.PcdMipiFrameBufferHeight|854
+  #gLumia630PkgTokenSpaceGuid.PcdMipiFrameBufferVisibleWidth|480
+  #gLumia630PkgTokenSpaceGuid.PcdMipiFrameBufferVisibleHeight|854
 
 [PcdsDynamicDefault.common]
   #
@@ -63,4 +63,4 @@
   gEfiMdeModulePkgTokenSpaceGuid.PcdConOutColumn|122
   gEfiMdeModulePkgTokenSpaceGuid.PcdConOutRow|24
 
-!include Lumia930Pkg/Shared.dsc.inc
+!include Lumia630Pkg/Shared.dsc.inc
