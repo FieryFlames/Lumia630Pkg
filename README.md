@@ -1,7 +1,7 @@
-# Lumia930Pkg
-WIP Custom ARM UEFI firmware for Lumia930
+# Lumia630Pkg
+WIP Custom ARM UEFI firmware for Lumia630
 
-![alt text](https://blog.rickliu.im/wp-content/uploads/2019/04/IMG_20190308_220745.jpg "Boot manager on Lumia930")
+![alt text](https://blog.rickliu.im/wp-content/uploads/2019/04/IMG_20190308_220745.jpg "Boot manager on Lumia630")
 
 # Current Status
 EMMC MMU PMIC GPIO Working
